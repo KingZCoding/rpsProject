@@ -15,12 +15,12 @@ function getHumanChoice(){
     return prompt("Enter Rock, Paper, or Scissors to play the game!");
 }
 
-let tie = "No Winner!"
-
 //creating a playRound function
 function playRound(humanChoice, computerChoice) {
     //convert humanChoice to match computerChoice
     humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase();
+    //defining tie
+    let tie = `No Winner!`;
     if(humanChoice == computerChoice){
         console.log(`It's a tie! Both chose ${humanChoice}`);
         return tie;
@@ -61,5 +61,6 @@ for (let i = 0; i < round; i++){
 }
 console.log(`The player has ${humanScore} points and the computer has ${computerScore} points`);
 }
+
 
 playGame(5)

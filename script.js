@@ -4,9 +4,8 @@ console.log("Hello World")
 
 //function for computer input
 function getComputerChoice() {
-    array = new Array("Rock","Paper","Scissors") //creating a new array for rock paper and scissors
-    return array[Math.floor(Math.random() * array.length)];
-    //credit to krishivga from TOP for this function
+    const choices = ["Rock", "Paper", "Scissors"]; //creating a new array for rock, paper and scissors
+    return choices[Math.floor(Math.random() * choices.length)]; // Math.floor makes whole number(Math.random() picks random number between 0 and 1 * choices.length helps determine output by assigning specific values to rock paper and scissors)
 }
 console.log(getComputerChoice())
 
@@ -51,11 +50,15 @@ function playGame(round) {
 let humanScore = 0;
 let computerScore = 0;
 
+
 for (let i = 0; i < round; i++){
-    score = playRound(getHumanChoice(), getComputerChoice());
-    if (score == true) {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    const result = playRound(humanChoice, computerChoice);
+
+    if (result === true){
         humanScore++;
-    }else if ( score == false) {
+    }else if (result === false){
         computerScore++;
     }
 }

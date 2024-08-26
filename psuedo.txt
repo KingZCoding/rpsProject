@@ -1,0 +1,5 @@
+create computer choice
+create human choice with prompt 
+create logic for rock paper scissors game 
+create scoring logic
+create logic to keep track of score with certain number of rounds played
